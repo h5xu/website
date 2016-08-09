@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		*{padding:0;margin: 0;}
+			#box1,#box2{text-align: center;
+				width:391px;
+				height: 800px;
+				float: left;
+				margin-left: 100px;
+				margin-top:100px ;
+			}
+			#smallbox1,#smallbox2{
+				width: 50px;
+				height: 300px;
+				float: left;
+				margin-top:100px;
+				text-align: center;
+			}
+			h2,p{height: 30px;line-height: 30px;background: #000;color:#fff}
+			
+			.small{
+				width:30px;
+				height:30px;
+				margin-bottom: 10px;
+				
+			}
+			img{display: block;}
+			#ss{width:391px;
+			height:479px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var oBox1=document.getElementById("box1")
+				var oSmallBox1=document.getElementById("smallbox1")
+				
+				var oBox2=document.getElementById("box2")
+				var oSmallBox2=document.getElementById("smallbox2")
+				
+				var oP1=oBox1.getElementsByTagName("p")[0]
+				var oImg1=oBox1.getElementsByTagName("img")[0]
+				var oSmallImg1=oSmallBox1.getElementsByTagName("img")
+				var oH2=oBox1.getElementsByTagName("h2")[0]
+				
+				var oP2=oBox2.getElementsByTagName("p")[0]
+				var oImg2=oBox2.getElementsByTagName("img")[0]
+				var oSmallImg2=oSmallBox2.getElementsByTagName("img")
+				var oH=oBox2.getElementsByTagName("h2")[0]
+				
+				var arr=["1.png","2.png","3.png","4.png"]
+				//console.log(oH2.innerHTML)
+				qh(oSmallImg1[0],0,1,"一",oP1,oImg1,oH2)
+				qh(oSmallImg1[1],1,2,"二",oP1,oImg1,oH2)
+				qh(oSmallImg1[2],2,3,"三",oP1,oImg1,oH2)
+				qh(oSmallImg1[3],3,4,"四",oP1,oImg1,oH2)
+				qh(oSmallImg2[0],0,1,"一",oP2,oImg2,oH)
+				qh(oSmallImg2[1],1,2,"二",oP2,oImg2,oH)
+				qh(oSmallImg2[2],2,3,"三",oP2,oImg2,oH)
+				qh(oSmallImg2[3],3,4,"四",oP2,oImg2,oH)
+				function qh(s,k,c1,c2,oP,oImg,oh){
+					
+					s.onclick=function(){
+						oP.innerHTML=c1+"/"+4
+						oImg.src=arr[k];
+						oh.innerHTML="图片"+c2;
+						
+					}
+					
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box1">
+			<p>1/4</p>
+			<img src="1.png"  id="ss"/>
+			<h2>图片一</h2>	
+		</div>
+		<div id="smallbox1">
+			
+			<img src="1.png"  class="small"/>
+			<img src="2.png"  class="small"/>
+			<img src="3.png"  class="small"/>
+			<img src="4.png"  class="small"/>
+		</div>
+		<div id="box2">
+			<p>1/4</p>
+			<img src="1.png"  id="ss"/>
+			<h2>图片一</h2>	
+		</div>
+		<div id="smallbox2">
+			
+			<img src="1.png"  class="small"/>
+			<img src="2.png"  class="small"/>
+			<img src="3.png"  class="small"/>
+			<img src="4.png"  class="small"/>
+		</div>
+	</body>
+</html>
